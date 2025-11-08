@@ -1,0 +1,5 @@
+- name: Configure auditd on Ubuntu
+  hosts: localhost
+  become: true
+  roles:
+    - auditd
