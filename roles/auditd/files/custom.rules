@@ -1,0 +1,18 @@
+# Watch for changes to identity files
+-w /etc/passwd -p wa -k identity_changes
+-w /etc/group -p wa -k identity_changes
+-w /etc/shadow -p wa -k identity_changes
+-w /etc/gshadow -p wa -k identity_changes
+
+# Watch sudoers
+-w /etc/sudoers -p wa -k sudoers
+-w /etc/sudoers.d/ -p wa -k sudoers
+
+# Log executions (64-bit); tag with key 'exec'
+-a always,exit -F arch=b64 -S execve -k exec
+
+# Track changes to audit rules files themselves
+-w /etc/audit/ -p wa -k audit_config
+
+# Example: monitor /var/log (file changes)
+-w /var/log/ -p wa -k logfiles
