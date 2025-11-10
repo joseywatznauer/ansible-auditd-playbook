@@ -113,10 +113,13 @@ flowchart TD
         C[ /var/log/audit/audit.log]
     end
 
-    Repo -->|Pulls site.yml| A -->|Installs and configures| B -->|Logs actions in the system| C
+    Repo --> A --> B --> C
 
 ```
-
+**Explanation:** 
+- GitHub Repo provides the site.yml to ``ansible-pull``, which is run on the Ubuntu VM
+- Ansible installs and configurse ``auditd``
+- ``auditd`` logs events to ``/var/log/audit/audit.log``
 
 ---
 
