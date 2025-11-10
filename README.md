@@ -13,7 +13,7 @@ This playbooks specifically audits identity and privilege-related files, and is 
 
 - **Operating System:** Ubuntu 24.x (tested on Ubuntu 24.04 LTS)
 - **Ansible Version:** 2.16 or later
-- **Git:** Configured
+- **Git** 
 - **auditd:** Installed automatically by the playbook
 
 ---
@@ -130,7 +130,7 @@ flowchart LR
 
 ---
 
-## Acknowledgments
+## Credits
 
 * [Ansible Documentation](https://docs.ansible.com/)
 * [Linux Audit Daemon Wiki](https://linux.die.net/man/8/auditd)
