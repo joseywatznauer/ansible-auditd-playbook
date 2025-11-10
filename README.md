@@ -93,7 +93,7 @@ You should see your custom rules listed and auditd in the "active (running)" sta
 ```
 
 The rules implemented monitor files especially pertinent for security and all commands:
-- **/etc/passwd, /etc/group, /etc/shadow, /etc/gshadow:** for modifications to user and group information.
+- **/etc/passwd, /etc/group, /etc/shadow, /etc/gshadow:** for changes to user and group information
 - **/etc/sudoers:** for unauthorized changes to privilege delegation.
 - **All executed commands:** to log every command run by any user.
 
@@ -109,11 +109,12 @@ flowchart LR
 
     subgraph VM[Ubuntu VM]
         A[ansible-pull]
-        B[auditd service]
-        C[Audit Logs - /var/log/audit/audit.log]
+        B[auditd]
+        C[ /var/log/audit/audit.log]
     end
 
-    Repo -->|Pulls site.yml and roles| A -->|Installs and Configures| B -->|Logs system activity| C
+    Repo -->|Pulls site.yml| A -->|Installs and configures| B -->|Logs actions in the system| C
+
 ```
 
 
