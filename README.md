@@ -126,7 +126,7 @@ flowchart LR
 |-------|--------|-----------|
 | `ERROR! Could not find a playbook to run.` | Incorrect file structure or missing `site.yml` | Ensure `site.yml` is in the root of the repo |
 | `Unsupported parameters for (ansible.legacy.copy) module: notify` | Wrong indentation of `notify` | Move `notify` outside of the module block |
-| `auditctl -l` shows “no rules” | Rules not loaded | Run `sudo augenrules --load` |
+| `auditctl -l` shows no rules | Rules not loaded | Run `sudo augenrules --load` |
 | `auditd` not running | Service not enabled | `sudo systemctl enable --now auditd` |
 
 ---
